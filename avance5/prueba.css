@@ -1,0 +1,109 @@
+* {
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+
+}
+
+form {
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
+    background: #F3F3F3;
+    padding: 30px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(0,0,0,0.5);
+}
+
+input{
+    padding: 10px;
+    display: block;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+input[type="submit"]{
+    background: linear-gradient(#FFDA63, #FFB940);
+    border: 0;
+    color: brown;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+
+input[type="submit"]:hover {
+    opacity: 1;
+}
+
+input[type="submit"]:active{
+    transform: scale(0.95);
+}
+@media (max-width:768px){
+    form{
+        width: 75%;
+    }
+}
+@media (max-width:480px){
+    form{
+        width:95%;
+    }
+}
+/* EMPIEZA EL OTRO CODIGO */
+.modal {
+    width:100%;
+    height: 100vh;
+    background: rgba(70, 69, 69, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    min-height: 100vh;
+
+    animation: modal 1s forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#cerrar {
+    display: none;
+}
+
+
+
+#cerrar + label{
+    position: fixed;
+    color: #fff;
+    font-size: 25px;
+    z-index: 50;
+    background: darkred;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    right: 10px;
+    cursor: pointer;
+
+    animation: modal 1s forwards;
+    visibility: hidden;
+    opacity:0;
+}
+#cerrar:checked + label, #cerrar:checked ~ .modal{
+    display: none;
+
+}
+
+@keyframes modal{
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
